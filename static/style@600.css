@@ -1,0 +1,63 @@
+        @media only screen and (max-width: 600px) {
+
+                .compute_prompt {
+                    height: 75px;
+                    width: 100px;
+                    padding: 10px;
+                    border: 1px solid green;
+                    border-radius: 7.5px;
+                }
+
+                .compute_prompt button{
+                    padding: 5px 20px;
+                    font-size: 15px;
+                    border-radius: 20px;
+                }
+
+                .button_section {
+                    padding: 0 20px;
+                }
+
+                .close_prompt {
+                    font-size: 40px;
+                    line-height: 10px;
+                }
+
+                header{
+                    height: 60px;
+                    padding: 0 10px;
+                }
+
+                #header_compute{
+                    font-size: 8px;
+                    border: 1px rgb(0,40,0) solid;
+                }
+
+                header img{
+                    height: 50px;
+                    margin: 15px;
+                }
+
+                .welcome_background{
+                    margin-top: 60px;
+                }
+
+                .welcome_container{
+                    width: 90%;
+                    border-radius: 20px;
+                    margin: 30px auto;
+                }
+
+                .welcome_block h1{
+                    font-size: 30px;
+                }
+
+                .welcome_block h1:nth-of-type(2), .welcome_block sub{
+                    font-size: 35px;
+                }
+
+                .welcome_block h2{
+                    font-size: 15px;
+                    padding: 10px;
+                }
+            }

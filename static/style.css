@@ -1,0 +1,357 @@
+
+        *{
+            font-family: "Roboto Mono", monospace;
+            font-weight: 400;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            cursor: arrow;
+        }
+
+        .page {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+
+        .disable {
+            pointer-events: none;
+            opacity: .6;
+        }
+
+        body {
+        }
+
+        .compute_prompt {
+            height: 300px;
+            width: 400px;
+            padding: 40px;
+            background-color: white;
+            border: 3px solid green;
+            border-radius: 30px;
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            position: fixed;
+            margin: auto;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
+
+        .compute_prompt button{
+            padding: 5px 20px;
+            font-size: 15px;
+            border-radius: 20px;
+            border: solid rgb(0,80,0);
+            background-color: rgb(0,100,0);
+            color: white;
+            cursor: pointer;
+
+            transition: border-color 0.3s, background-color  0.3s, ;
+        }
+
+        .compute_prompt button:first-child {
+            background-color: rgb(100,0,0);
+            border-color: rgb(80,0,0);
+        }
+
+        .compute_prompt button:first-child:active {
+            background-color: rgb(150,0,0);
+            border-color: rgb(130,0,0);
+        }
+
+        .compute_prompt button:last-child:active {
+            background-color: rgb(0,150,0);
+            border-color: rgb(0,130,0);
+        }
+
+        .button_section {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+
+        .close_prompt {
+            color: #aaa;
+            font-size: 40px;
+            font-weight: bold;
+            margin-left: auto;
+            cursor: pointer;
+            line-height: 10px;
+        }
+
+
+        .background{
+            //background-image: url('https://4kwallpapers.com/images/wallpapers/agriculture-farm-land-countryside-aerial-view-green-1280x1280-3985.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            position: fixed;
+            left:0;
+            top: 0;
+            height: 100%;
+            filter: blur(3px);
+            width: 100%;
+            z-index: -1;
+        }
+
+        header{
+            position: fixed;
+            width: 100%;
+            height: 70px;
+            background: rgb(0, 120, 0);
+            align-items: center;
+            display: flex;
+            padding: 0 40px;
+            justify-content: space-between;
+            z-index: 10;
+        }
+
+        header div{
+            display: flex;
+            align-items: center;
+        }
+
+        #header_compute{
+            color: green;
+            font-weight: 900;
+            font-size: 18px;
+            background-color: white;
+            border: 1px rgb(0,40,0) solid;
+        }
+
+        #header_compute:active{
+            background-color: rgb(200,255,200);
+            border-color: rgb(200,255,200);
+        }
+
+        header h1{
+            font-weight: 700;
+        }
+
+        header img{
+            height: 60px;
+            margin: 5px;
+        }
+
+        .container {
+            display: flex;
+            //flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .welcome_background{
+            margin-top: 70px;
+        }
+
+        .welcome_container{
+            width: 90%;
+            background: white;
+            border-radius: 20px;
+            margin: 30px auto;
+        }
+        .welcome_block, .paragraph {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .welcome_block{
+            min-height: 90vh;
+        }
+
+        .welcome_t {
+            flex: 1 1 650px;
+        }
+
+        .welcome_block h1{
+            color: rgb(0, 51, 0);
+            font-size: 50px;
+            font-family: "Quicksand", sans-serif;
+            font-weight: 400;
+        }
+
+        .welcome_block h1:nth-of-type(2), .welcome_block sub{
+            font-weight: 600;
+            font-size: 60px;
+        }
+
+        .welcome_block h2{
+            font-weight: 400;
+            font-size: 20px;
+            padding: 25px;
+        }
+
+        .welcome_block img, .paragraph img{
+            max-width: 700px;
+            min-width: 400px;
+            height: auto;
+        }
+
+        .welcome_block button{
+            padding: 10px;
+            border: 2px solid green;
+            border-radius: 30px;
+            background-color: green;
+            font-size: 18px;
+            font-weight: 900;
+            color: white;
+            cursor: pointer;
+        }
+
+        .why_container{
+            display: flex;
+            flex-wrap: wrap;
+            margin: 50px 0;
+            padding: 30px;
+            min-height: 75vh;
+        }
+
+        .why_block{
+            border: 3px solid green;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            width: 30%;
+            min-width: 400px;
+            height: 550px;
+            margin: 20px auto;
+        }
+
+        .why_container > h2{
+            color: rgb(0,100,0);
+            font-weight: 600;
+            width: 100%;
+            font-size: 35px;
+        }
+        .why_block > h3{
+            margin: 10px;
+            color: green;
+            font-size: 21px;
+            height: 55px;
+        }
+
+        .why_block img{
+            width: 250px;
+            height: auto;
+        }
+
+        .why_block{
+            font-size: 16px;
+        }
+
+        .welcome_container > p{
+            margin: 20px;
+        }
+
+        .paragraph > div{
+            padding: 70px;
+        }
+
+        .input_background{
+            min-width: 600px;
+            width: 100%;
+            background-color: rgba(240,240,240,1);
+            margin-top: 70px;
+        }
+
+
+        .input_container{
+            margin: 0 auto;
+            max-width: 800px;
+            padding: 30px;
+        }
+
+        ._form_section{
+            border: 3px solid rgb(150,150,150);
+            background: white;
+            border-radius: 20px;
+            padding: 10px;
+            margin: 6px;
+        }
+
+        ._form_section h4{
+            color: rgb(60,60,60);
+        }
+
+        .form_section {
+            margin-bottom: 10px;
+            display: flex;
+            align-item: center;
+            justify-content: space-between;
+            width: auto;
+            margin-left: 50px;
+        }
+
+        .form_section label {
+            width: 50%;
+            color: rgb(60,60,60);
+            padding: 5px;
+            font-size: 15px;
+            text-align: left;
+        }
+
+        .form_section input {
+            color: rgb(100,100,100);
+            width: 80px;
+            height: 30px;
+            padding: 3px;
+            border: 2px solid rgb(70,70,70);
+            border-radius: 7px;
+            font-size: 14px;
+            transition: border-color 0.3s,;
+
+        }
+
+        input[type=number]:focus {
+            border-color: rgb(0,120,0);
+            outline: none;
+        }
+
+        .form_section .input-section{
+            width: 150px;
+            margin: auto 0;
+        }
+
+        .unit{
+            color: rgb(100,100,100);
+            display: inline;
+            font-size: 14px;
+        }
+
+        .compute_section{
+            text-align: right;
+            margin: 10px;
+        }
+
+        .compute_section button {
+            padding: 5px 20px;
+            font-size: 15px;
+            border-radius: 20px;
+            border: solid rgb(0,80,0);
+            background-color: rgb(0,100,0);
+            color: white;
+            cursor: pointer;
+            width: 150px;
+
+            transition: border-color 0.3s, background-color  0.3s, ;
+        }
+
+        .compute_section button:active{
+            background-color: rgb(0,150,0);
+            border-color: rgb(0,130,0);
+        }
+
+
+        footer {
+            width: 100%;
+            height: 70px;
+            background: rgb(0, 60, 0);
+            color: white;
+            text-align: center;
+            line-height: 70px;
+        }
