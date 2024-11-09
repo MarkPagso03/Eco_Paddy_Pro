@@ -118,7 +118,7 @@
         #header_compute{
             color: green;
             font-weight: 900;
-            font-size: 18px;
+            font-size: 16px;
             background-color: white;
             border: 1px rgb(0,40,0) solid;
         }
@@ -188,6 +188,7 @@
 
         .welcome_block img, .paragraph img{
             max-width: 700px;
+            width: 80%;
             min-width: 400px;
             height: auto;
         }
@@ -250,6 +251,10 @@
 
         .paragraph > div{
             padding: 70px;
+        }
+
+        .paragraph h2{
+            font-size: 20px;
         }
 
         .input_background{
@@ -349,9 +354,9 @@
 
         footer {
             width: 100%;
-            height: 70px;
+            height: 60px;
             background: rgb(0, 60, 0);
             color: white;
             text-align: center;
-            line-height: 70px;
+            line-height: 60px;
         }

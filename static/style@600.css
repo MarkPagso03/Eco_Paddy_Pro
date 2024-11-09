@@ -29,7 +29,7 @@
                 }
 
                 #header_compute{
-                    font-size: 8px;
+                    font-size: 11px;
                     border: 1px rgb(0,40,0) solid;
                 }
 
@@ -56,8 +56,128 @@
                     font-size: 35px;
                 }
 
-                .welcome_block h2{
+                .welcome_block h2, .paragraph h2{
                     font-size: 15px;
                     padding: 10px;
+                }
+
+                .welcome_block img, .paragraph img{
+                    max-width: 400px;
+                    min-width: 150px;
+                }
+
+                .welcome_block button{
+                    padding: 5px;
+                    border: 1px solid green;
+                    border-radius: 20px;
+                    font-size: 15px;
+                }
+
+                .why_container{
+                    margin: 25px 0;
+                    padding: 15px;
+                }
+
+                .why_block{
+                    border: 1.5px solid green;
+                    border-radius: 10px;
+                    padding: 15px;
+                    width: 30%;
+                    min-width: 300px;
+                    height: auto;
+                    margin: 10px auto;
+                }
+
+                .why_container > h2{
+                    font-size: 18px;
+                }
+
+                .why_block > h3{
+                    margin: 5px;
+                    font-size: 12px;
+                    height: 25px;
+                }
+
+                .why_block img{
+                    width: 50%;
+                    height: auto;
+                }
+
+                .why_block{
+                    font-size: 11px;
+                }
+
+                .welcome_container > p{
+                    margin: 10px;
+                }
+
+                .paragraph > div{
+                    padding: 35px;
+                }
+
+                .input_background{
+                    min-width: 100%;
+                    width: 100%;
+                    margin-top: 60px;
+                }
+
+                .input_container{
+                    padding: 15px;
+                }
+
+                ._form_section{
+                    border: 1px solid rgb(150,150,150);
+                    border-radius: 10px;
+                    padding: 10px;
+                    margin: 3px;
+                }
+
+                ._form_section h4{
+                    font-size: 12px;
+                }
+
+                .form_section {
+                    margin-bottom: 5px;
+                    margin-left: 25px;
+                }
+
+                .form_section label {
+                    padding: 2.5px;
+                    font-size: 11px;
+                }
+
+                .form_section input {
+                    width: 40px;
+                    height: 15px;
+                    padding: 1.5px;
+                    border: 1px solid rgb(70,70,70);
+                    border-radius: 4px;
+                    font-size: 11px;
+                }
+
+                .form_section .input-section{
+                    width: 100px;
+                }
+
+                .unit{
+                    font-size: 11px;
+                }
+
+                .compute_section{
+                    text-align: right;
+                    margin: 5px;
+                }
+
+                .compute_section button {
+                    padding: 2px 10px;
+                    font-size: 11px;
+                    border-radius: 10px;
+                    width: 85px;
+                }
+
+                footer {
+                    font-size: 8px;
+                    height: 35px;
+                    line-height: 35px;
                 }
             }
