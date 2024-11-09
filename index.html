@@ -28,16 +28,16 @@
     </div>
 
     <div class="background"></div>
-
-    <header>
-        <div>
-            <img src="static/logo14.png" alt="logo" />
-            <h1 id="title" style="color: white;">ECO Paddy Pro</h1>
-        </div>
-        <div class="compute_section">
-            <button id="header_compute" onclick="togglePage()">Calculate</button>
-        </div>
-    </header>
+    <div class="header"></div>
+        <header>
+            <div>
+                <img src="static/logo14.png" alt="logo" />
+                <h1 id="title" style="color: white;">ECO Paddy Pro</h1>
+            </div>
+            <div class="compute_section">
+                <button id="header_compute" onclick="togglePage()">Calculate</button>
+            </div>
+        </header>
 
     <div class="container">
         <div class="welcome_background active page" data-page="page1">
@@ -400,6 +400,8 @@
             document.querySelector("#compute_prompt").style.display = "flex"; // Show the alert
             document.querySelector(".input_container").classList.add('disable');
             document.querySelector(".background").classList.add('disable');
+            document.querySelector("header").classList.add('disable');
+            document.querySelector("footer").classList.add('disable');
             document.querySelector("body").style.overflow = "hidden";
             console.log("compute clicked");
         });
@@ -408,6 +410,8 @@
             document.querySelector("#compute_prompt").style.display = "none"; // Show the alert
             document.querySelector(".input_container").classList.remove('disable');
             document.querySelector(".background").classList.remove('disable');
+            document.querySelector("header").classList.remove('disable');
+            document.querySelector("footer").classList.remove('disable');
             document.querySelector("body").style.overflow = "";
             console.log("compute clicked");
         });
@@ -416,6 +420,8 @@
             document.querySelector("#compute_prompt").style.display = "none"; // Show the alert
             document.querySelector(".input_container").classList.remove('disable');
             document.querySelector(".background").classList.remove('disable');
+            document.querySelector("header").classList.remove('disable');
+            document.querySelector("footer").classList.remove('disable');
             document.querySelector("body").style.overflow = "";
             console.log("compute clicked");
         });
