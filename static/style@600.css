@@ -14,6 +14,10 @@
                     border-radius: 20px;
                 }
 
+                .compute_prompt button:first-child {
+                    border-size: 1px;
+                }
+
                 .compute_prompt h2{
                     font-size: 13px;
                 }
