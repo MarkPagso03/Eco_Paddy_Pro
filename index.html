@@ -32,7 +32,7 @@
         <header>
             <div>
                 <img src="static/logo14.png" alt="logo" />
-                <h1 id="title" style="color: white;">ECO Paddy Pro</h1>
+                <h2 id="title" style="color: white;">ECO Paddy Pro</h2>
             </div>
             <div class="compute_section">
                 <button id="header_compute" onclick="togglePage()">Calculate</button>
@@ -40,7 +40,7 @@
         </header>
 
     <div class="container">
-        <div class="welcome_background active page" data-page="page1">
+        <div class="welcome_background page" data-page="page1">
             <div class="welcome_container">
                 <div class="welcome_block">
                     <div class="welcome_t">
@@ -89,7 +89,7 @@
             </div>
         </div>
 
-        <div class="input_background page" data-page="page2">
+        <div class="input_background page active" data-page="page2">
             <div class="input_container">
                 <div class="form_container">
                     <div class="_form_section">
@@ -132,7 +132,7 @@
                         <div class="form_section">
                             <label for="Hybrid">Hybrid</label>
                             <div class="input-section">
-                                <input type="number" class="input-field" id="Hybrid" name="Hybrid" placeholder="0">
+                                <input type="number" class="input-field" id="hybrid" name="Hybrid" placeholder="0">
                                 <p class="unit">kg/ha</p>
                             </div>
                         </div>
@@ -143,7 +143,7 @@
                         <div class="form_section">
                             <label for="Herbicide">Herbicide</label>
                             <div class="input-section">
-                                <input type="number" class="input-field" id="Herbicide" name="Herbicide" placeholder="0">
+                                <input type="number" class="input-field" id="herbicide" name="Herbicide" placeholder="0">
                                 <p class="unit">kg/ha</p>
                             </div>
                         </div>
@@ -184,9 +184,17 @@
                         </div>
 
                         <div class="form_section">
-                            <label for="d_emission">Direct emission from N<br>(intermittent drainage)</label>
+                            <label for="d_emission_i">Direct emission from N<br>(intermittent drainage)</label>
                             <div class="input-section">
-                                <input type="number" class="input-field" id="d_emission" name="d_emission" placeholder="0">
+                                <input type="number" class="input-field" id="d_emission_i" name="d_emission" placeholder="0">
+                                <p class="unit">kg/ha</p>
+                            </div>
+                        </div>
+
+                        <div class="form_section">
+                            <label for="d_emission_c">Direct emission from N<br>(continues floor drainage)</label>
+                            <div class="input-section">
+                                <input type="number" class="input-field" id="d_emission_c" name="d_emission" placeholder="0">
                                 <p class="unit">kg/ha</p>
                             </div>
                         </div>
@@ -335,7 +343,25 @@
                         </div>
                     </div>
 
+                    <div class="_form_section">
+                        <h4>Straw burning</h4>
+                        <div class="form_section">
+                            <label for="t_burn">Total</label>
+                            <div class="input-section">
+                                <input type="number" class="input-field" id="t_burn" name="t_burn" placeholder="0">
+                                <p class="unit">days</p>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="compute_section">
+                        <label for="irrigated">
+                        <input type="radio" value="irrigated" name="com_type" id="irrigated" checked="true">
+                            <span class="radio_mark"></span>Irrigated</label>
+
+                        <label for="rainfed">
+                        <input type="radio" value="rainfed" name="com_type" id="rainfed">
+                            <span class="radio_mark"></span>Rainfed</label>
                         <button id="compute">Compute</button>
                     </div>
                 </div>
@@ -349,6 +375,11 @@
         <p>	&copy; 2024. All Rights Reserved.</p>
     </footer>
     <script>
+        function compute(){
+
+
+        }
+
         window.addEventListener('DOMContentLoaded',
             function() {
                 if (window.innerWidth < 600) { // must remove true

@@ -183,6 +183,13 @@
                     width: 85px;
                 }
 
+                .compute_section label {
+                    padding: 7px 10px;
+                    font-size: 11px;
+                    border-radius: 20px;
+                    width: 85px;
+                }
+
                 footer {
                     font-size: 8px;
                     height: 35px;
