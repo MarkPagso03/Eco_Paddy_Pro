@@ -20,7 +20,8 @@
             opacity: .6;
         }
 
-        body {
+        body::-webkit-scrollbar  {
+            display: none;
         }
 
         .compute_prompt {

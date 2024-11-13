@@ -15,7 +15,7 @@
                 }
 
                 .compute_prompt button:first-child {
-                    border-size: 1px;
+                    border: 1px solid black;
                 }
 
                 .compute_prompt h2{
