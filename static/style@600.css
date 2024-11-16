@@ -180,7 +180,7 @@
                     margin: 5px;
                 }
 
-                .compute_section button {
+                .compute_section button, .canvas button {
                     padding: 7px 10px;
                     font-size: 11px;
                     border-radius: 20px;
@@ -194,7 +194,7 @@
                     width: 85px;
                 }
 
-                .canvas{
+                .table_container{
                     border: 1px solid rgb(150,150,150);
                     border-radius: 10px;
                     padding: 10px;
