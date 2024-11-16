@@ -1,4 +1,56 @@
 
+        let myChart;
+        const row_name = [
+                    '1. Seed Input',
+                    '2. Pesticide',
+                    '        Herbicide',
+                    '        Insecticide',
+                    '        Total',
+                    '3. Fertilizer',
+                    '        Nitrogen (production)',
+                    '        Phosphorus (production)',
+                    '        Potassium (production)',
+                    '        Direct emission from N (intermittent drainage)',
+                    '        Direct emission from N (continuous flooding)',
+                    '        Indirect emission from N',
+                    '        Farmyard manure',
+                    '        Compost',
+                    '        Total',
+                    '4. Seedbed and Land Preparation',
+                    '        a. Plowing',
+                    '                Machine Emission Factor',
+                    '                Fuel Consumption',
+                    '        b. Harrowing',
+                    '                Machine hours',
+                    '                Fuel Consumption',
+                    '        c. Leveling',
+                    '                Machine Emission Factor',
+                    '                Fuel Consumption',
+                    '        d. Manufacture of Machinery\n           (hand tractor and axial flow thresher)',
+                    '        e. Mechanical Transplanter',
+                    '                Machine hours',
+                    '                Fuel Consumption',
+                    '        Total',
+                    '5. Harvesting and Threshing',
+                    '        Machine Emission Factor',
+                    '        Fuel Consumption',
+                    '        Total',
+                    '6. Pump (Irrigation)',
+                    '        Machine hours',
+                    '        Fuel Consumption',
+                    '        Total',
+                    '7. Soil Emission',
+                    '        a. Irrigated rice cultivation w/out straw',
+                    '        b. Irrigated rice cultivation w/straw',
+                    '        Total CH3',
+                    '        Total CO2 equivalence',
+                    '8. Straw Burning',
+                    '        Total CO2 Emission'
+                ];
+        let input_value = [];
+        const units = ['kg/ha', '', 'kg/ha', 'kg/ha', '', '', 'kg/ha', 'kg/ha', 'kg/ha', 'kg/ha', 'kg/ha', 'kg/ha', 'kg/ha', 'kg/ha', '', '', '', 'hr/ha', 'L/ha','', 'hr/ha', 'L/ha','', 'hr/ha', 'L/ha', 'kg','', 'hr/ha', 'L/ha', '','', 'hr/ha', 'L/ha', '', '', 'hr/ha', 'L/ha','','', 'days', 'days', '', '', 'kg/ha', ''];
+        let data_ghg = [];
+
         const radioButtons = document.querySelectorAll('input[name="com_type"]');
 
         radioButtons.forEach(radio => {
@@ -6,9 +58,17 @@
                 if (document.querySelector("#rainfed").checked){
                     document.querySelector('label[for="cult_wo_straw"]').innerHTML = "a.Rainfed rice cultivation<br>without straw";
                     document.querySelector('label[for="cult_w_straw"]').innerHTML = "b.Rainfed rice cultivation<br>with straw";
+                    row_name[39] = 'a. Rainfed rice cultivation w/out straw';
+                    row_name[40] = 'b. Rainfed rice cultivation w/ straw';
+                    document.querySelector('.wo_straw').innerHTML = "&emsp;&emsp;a. Rainfed rice cultivation w/out straw";
+                    document.querySelector('.w_straw').innerHTML = "&emsp;&emsp;b. Rainfed rice cultivation w/ straw";
                 }else{
-                    document.querySelector('label[for="cult_wo_straw"]').innerHTML = "a.Irrigation rice cultivation<br>without straw";
-                    document.querySelector('label[for="cult_w_straw').innerHTML = "b.Irrigation rice cultivation<br>with straw";
+                    document.querySelector('label[for="cult_wo_straw"]').innerHTML = "a.Irrigated rice cultivation<br>without straw";
+                    document.querySelector('label[for="cult_w_straw').innerHTML = "b.Irrigated rice cultivation<br>with straw";
+                    row_name[39] = 'a. Irrigated rice cultivation w/out straw';
+                    row_name[40] = 'b. Irrigated rice cultivation w/ straw';
+                    document.querySelector('.wo_straw').innerHTML = "&emsp;&emsp;a. Irrigated rice cultivation w/out straw";
+                    document.querySelector('.w_straw').innerHTML = "&emsp;&emsp;b. Irrigated rice cultivation w/ straw";
                 }
             });
         });
@@ -82,59 +142,6 @@
             const factor = Math.pow(10, 4);
             return Math.round(num * factor) / factor;
         }
-
-        let myChart;
-        const row_name = [
-                    '1. Seed Input',
-                    '2. Pesticide',
-                    '        Herbicide',
-                    '        Insecticide',
-                    '        Total',
-                    '3. Fertilizer',
-                    '        Nitrogen (production)',
-                    '        Phosphorus (production)',
-                    '        Potassium (production)',
-                    '        Direct emission from N (intermittent drainage)',
-                    '        Direct emission from N (continuous flooding)',
-                    '        Indirect emission from N',
-                    '        Farmyard manure',
-                    '        Compost',
-                    '        Total',
-                    '4. Seedbed and Land Preparation',
-                    '        a. Plowing',
-                    '                Machine Emission Factor',
-                    '                Fuel Consumption',
-                    '        b. Harrowing',
-                    '                Machine hours',
-                    '                Fuel Consumption',
-                    '        c. Leveling',
-                    '                Machine Emission Factor',
-                    '                Fuel Consumption',
-                    '        d. Manufacture of Machinery\n           (hand tractor and axial flow thresher)',
-                    '        e. Mechanical Transplanter',
-                    '                Machine hours',
-                    '                Fuel Consumption',
-                    '        Total',
-                    '5. Harvesting and Threshing',
-                    '        Machine Emission Factor',
-                    '        Fuel Consumption',
-                    '        Total',
-                    '6. Pump (Irrigation)',
-                    '        Machine hours',
-                    '        Fuel Consumption',
-                    '        Total',
-                    '7. Soil Emission',
-                    '        a. Irrigated rice cultivation w/out straw',
-                    '        b. Irrigated rice cultivation w/straw',
-                    '        Total CH3',
-                    '        Total CO2 equivalence',
-                    '8. Straw Burning',
-                    '        Total CO2 Emission'
-                ];
-        let input_value = [];
-        const units = ['kg/ha', '', 'kg/ha', 'kg/ha', '', '', 'kg/ha', 'kg/ha', 'kg/ha', 'kg/ha', 'kg/ha', 'kg/ha', 'kg/ha', 'kg/ha', '', '', '', 'hr/ha', 'L/ha','', 'hr/ha', 'L/ha','', 'hr/ha', 'L/ha', 'kg','', 'hr/ha', 'L/ha', '','', 'hr/ha', 'L/ha', '', '', 'hr/ha', 'L/ha','','', 'days', 'days', '', '', 'kg/ha', ''];
-        let data_ghg = [];
-
 
         document.querySelector("#cancel_compute").addEventListener("click", close)
         document.querySelector("#close_prompt").addEventListener("click", close);
