@@ -9,7 +9,7 @@
                 }
 
                 .compute_prompt button{
-                    padding: 5px 20px;
+                    padding: 5px 10px;
                     font-size: 11px;
                     border-radius: 20px;
                 }
@@ -192,6 +192,10 @@
                     font-size: 11px;
                     border-radius: 20px;
                     width: 85px;
+                }
+
+                #table th, #table td{
+                    font-size: 11px;
                 }
 
                 footer {

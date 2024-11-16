@@ -63,7 +63,6 @@
         document.querySelector("#compute").addEventListener("click", function() {
             document.querySelector("#compute_prompt").style.display = "flex"; // Show the alert
             document.querySelector(".input_container").classList.add('disable');
-            document.querySelector(".background").classList.add('disable');
             document.querySelector("header").classList.add('disable');
             document.querySelector("footer").classList.add('disable');
             document.querySelector("body").style.overflow = "hidden";
@@ -73,7 +72,6 @@
         function close() {
             document.querySelector("#compute_prompt").style.display = "none"; // Show the alert
             document.querySelector(".input_container").classList.remove('disable');
-            document.querySelector(".background").classList.remove('disable');
             document.querySelector("header").classList.remove('disable');
             document.querySelector("footer").classList.remove('disable');
             document.querySelector("body").style.overflow = "";
@@ -278,6 +276,7 @@
 
             // Chart creation
             const ctx = document.getElementById('chart').getContext('2d');
+            const window_width = window.innerWidth;
 
             if (myChart) {
                 myChart.destroy();
@@ -286,7 +285,7 @@
             myChart = new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: ['Seed', 'Pesticide', 'Fertilizer', 'Seedbed and Land Preparation', 'Harvesting and Threshing', 'Pump', 'Soil Emission', 'Straw Burning'],
+                    labels: ['Seed', 'Pesticide', 'Fertilizer', 'Seedbed and Land Preparation', 'Harvesting and Threshing', 'Pump (Irrigation)', 'Soil Emission', 'Straw Burning'],
                     datasets: [{
                         label: 'GHG Data',
                         data: [seed_in, pesticide, fertilizer, seedbed, harvest, pump, s_emission_co2, s_burn],
@@ -296,9 +295,36 @@
                     }]
                 },
                 options: {
+                    responsive: true, // Ensures responsiveness
+                    maintainAspectRatio: true,
                     scales: {
                         y: {
-                            beginAtZero: true
+                            beginAtZero: true,
+                            ticks: { // Show every label, adjust as needed for your data
+                                font: {
+                                    size: window_width > 600 ? 12 : 8, // Adjust the size as needed
+                                }
+                            }
+                        },
+                        x: {
+                            autoSkip: false,
+                            ticks: {
+                                stepSize: 1, // Show every label, adjust as needed for your data
+                                font: {
+                                    size: window_width > 600 ? 12 : 8, // Adjust the size as needed
+                                }
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            labels: {
+                                font: {
+                                    size: window_width > 600 ? 13 : 9// Set the size of the legend labels (in pixels)
+                                },
+                                boxWidth: 0,
+                                boxHeight: 0,
+                            }
                         }
                     }
                 }
@@ -343,8 +369,8 @@
                             valign: 'middle',           // Vertical alignment for body cells
                           },
                         headStyles: {
-                            fillColor: [124, 241, 143],   // Background color for header
-                            textColor: [50, 50, 50], // Text color for header
+                            fillColor: [255, 255, 255],   // Background color for header
+                            textColor: [0, 0, 0], // Text color for header
                             halign: 'center',
                             fontStyle: 'bold',          // Font style for header
                             valign: 'middle',           // Vertical alignment for header
