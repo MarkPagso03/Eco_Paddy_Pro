@@ -180,7 +180,6 @@
             '', '',
             (document.querySelector("#s_burn").value || 0)
         ];
-        console.log(input_value);
 
         // Extract h_area separately as it's used in multiple calculations
         // Parse h_area separately
@@ -244,21 +243,13 @@
         // Total emissions and values
         const total = roundToDecimals(seed_in + pesticide + fertilizer + seedbed + harvest + pump + s_emission_co2 + s_burn);
 
-        // Log final calculated values (optional)
-        console.log({
-            seed_in, pesticide, fertilizer, seedbed, harvest, pump, s_emission_co2, s_burn, total
-        });
-
-
-
-
             data_ghg = [seed_in,'', herbicide, insecticide, pesticide,'', nitrogen, phosphorus,
                 potassium, d_emission_i, d_emission_c, i_emission, f_manure, compost, fertilizer, '', '',
                 plow_m_hour, plow_f_consumption, '', harrow_m_hour, harrow_f_consumption, '', level_m_hour,
                 level_f_consumption, m_machinery, '', trans_m_hour, trans_f_consumption, seedbed, '',
                 harvest_m_hour, harvest_f_consumption, harvest, '' , pump_m_hour, pump_f_consumption, pump, '',
                 cult_wo_straw, cult_w_straw, s_emission_ch4, s_emission_co2, s_burn, total];
-        console.log(data_ghg);
+
             const tableBody = document.querySelector("#table tbody");
 
             for (let i = 0; i < input_value.length; i++) {
@@ -332,8 +323,6 @@
 
 
             close();
-            console.log(total);
-
         }
 
         compute();
