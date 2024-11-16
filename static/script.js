@@ -336,6 +336,8 @@
 
         }
 
+        compute();
+
         document.querySelector("#compute_compute").addEventListener('click', compute);
 
         document.querySelector("#download_pdf").addEventListener('click', function() {
