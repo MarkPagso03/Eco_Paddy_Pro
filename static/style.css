@@ -393,14 +393,11 @@
             border-radius: 20px;
             padding: 20px;
             color: rgb(30, 30, 30);
+            margin-top: 50px;
         }
 
         sub{
             color: rgb(30,30,30);
-        }
-
-        .canvas button{
-
         }
 
         #table{
