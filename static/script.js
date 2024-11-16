@@ -85,7 +85,7 @@
 
         let myChart;
         const row_name = [
-                    '1. Seed Inut',
+                    '1. Seed Input',
                     '2. Pesticide',
                     '        Herbicide',
                     '        Insecticide',
@@ -142,7 +142,7 @@
         function compute(){
            // Gather all input values in one array, keeping the empty strings for gaps
         input_value = [
-            (document.querySelector("#seed_in").value ),
+            (document.querySelector("#seed_in").value || 0),
             '',
             (document.querySelector("#herbicide").value || 0),
             (document.querySelector("#insecticide").value || 0),
@@ -294,7 +294,8 @@
                             ticks: { // Show every label, adjust as needed for your data
                                 font: {
                                     size: window_width > 600 ? 12 : 8, // Adjust the size as needed
-                                }
+                                },
+                                color: 'rgb(0,0,0)'
                             }
                         },
                         x: {
@@ -303,7 +304,8 @@
                                 stepSize: 1, // Show every label, adjust as needed for your data
                                 font: {
                                     size: window_width > 600 ? 12 : 8, // Adjust the size as needed
-                                }
+                                },
+                                color: 'rgb(0,0,0)'
                             }
                         }
                     },
@@ -348,7 +350,9 @@
 
                 // Create and save the PDF with jsPDF
                 if (jsPDF) {
-                    const doc = new jsPDF();
+                    const doc = new jsPDF('p', 'mm', 'a4');;
+
+
                     doc.autoTable({
                         head: [['AGRICULTURAL INPUTS AND RESOURCES','QUANTITY','UNIT','GHG\n(kg CO2 eq/ha)']],
                         body: table_data,
@@ -356,7 +360,7 @@
                         styles:  {
                             fillColor: [255, 255, 255], // Background color for body
                             textColor: [0, 0, 0],       // Text color for body
-                            fontSize: 12,               // Font size for body text
+                            fontSize: 11,               // Font size for body text
                             valign: 'middle',           // Vertical alignment for body cells
                           },
                         headStyles: {
