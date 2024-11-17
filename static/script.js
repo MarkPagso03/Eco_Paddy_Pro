@@ -50,8 +50,31 @@
         let input_value = [];
         const units = ['kg/ha', '', 'kg/ha', 'kg/ha', '', '', 'kg/ha', 'kg/ha', 'kg/ha', 'kg/ha', 'kg/ha', 'kg/ha', 'kg/ha', 'kg/ha', '', '', '', 'hr/ha', 'L/ha','', 'hr/ha', 'L/ha','', 'hr/ha', 'L/ha', 'kg','', 'hr/ha', 'L/ha', '','', 'hr/ha', 'L/ha', '', '', 'hr/ha', 'L/ha','','', 'days', 'days', '', '', 'kg/ha', ''];
         let data_ghg = [];
-
         const radioButtons = document.querySelectorAll('input[name="com_type"]');
+
+
+        window.addEventListener('DOMContentLoaded',
+            function() {
+                if (window.innerWidth < 600) {
+                    document.querySelector('#title').remove();
+                }
+            });
+
+        function limitToMaxDigits(input) {
+            const maxValue = 1000000;
+            const value = parseFloat(input.value);
+
+            if (value > maxValue && !input.value.includes('.')) {
+                input.value = input.value.slice(0, 7); // Slice to max 7 characters for integers (since max is 1000000)
+                input.setCustomValidity('The value must not exceed 1000000.');
+            } else if (value > maxValue && input.value.includes('.')) {
+                // Allow values like 999999.99 but don't slice if it's a decimal
+                input.value = maxValue; // Alternatively, you can decide what to do for decimals over max
+            }else{
+                input.setCustomValidity('');
+            }
+            input.reportValidity();
+        }
 
         radioButtons.forEach(radio => {
             radio.addEventListener('change', () => {
@@ -72,14 +95,6 @@
                 }
             });
         });
-
-        window.addEventListener('DOMContentLoaded',
-            function() {
-                if (window.innerWidth < 600) { // must remove true
-                    document.querySelector('#title').remove();
-                    console.log('Eleme');
-                }
-            });
 
         function togglePage() {
 

@@ -99,7 +99,7 @@
                         <div class="form_section">
                             <label for="h_area" >Harvested Area in hectare</label>
                             <div class="input-section">
-                                <input type="number" class="input-field" id="h_area" name="h_area" placeholder="0">
+                                <input type="number" class="input-field" id="h_area" name="h_area" placeholder="0" oninput="limitToMaxDigits(this)">
                                 <p class="unit">kg/ha</p>
                             </div>
                         </div>
@@ -107,7 +107,7 @@
                          <div class="form_section">
                             <label for="c_period" >Cultivation Period in Days</label>
                             <div class="input-section">
-                                <input type="number" class="input-field" id="c_period" name="c_period" placeholder="0" >
+                                <input type="number" class="input-field" id="c_period" name="c_period" placeholder="0" oninput="limitToMaxDigits(this)" >
                                 <p class="unit">kg/ha</p>
                             </div>
                         </div>
@@ -115,7 +115,7 @@
                          <div class="form_section">
                             <label for="yield" >Yield in kilograms</label>
                             <div class="input-section">
-                                <input type="number" class="input-field" id="yield" name="yield" placeholder="0">
+                                <input type="number" class="input-field" id="yield" name="yield" placeholder="0" oninput="limitToMaxDigits(this)">
                                 <p class="unit">kg/ha</p>
                             </div>
                         </div>
@@ -126,7 +126,7 @@
                         <div class="form_section">
                             <label for="seed_in" ></label>
                             <div class="input-section">
-                                <input type="number" class="input-field" id="seed_in" name="seed_in" placeholder="0">
+                                <input type="number" class="input-field" id="seed_in" name="seed_in" placeholder="0" oninput="limitToMaxDigits(this)">
                                 <p class="unit">kg/ha</p>
                             </div>
                         </div>
@@ -137,7 +137,7 @@
                         <div class="form_section">
                             <label for="herbicide">Herbicide</label>
                             <div class="input-section">
-                                <input type="number" class="input-field" id="herbicide" name="herbicide" placeholder="0">
+                                <input type="number" class="input-field" id="herbicide" name="herbicide" placeholder="0" oninput="limitToMaxDigits(this)">
                                 <p class="unit">kg/ha</p>
                             </div>
                         </div>
@@ -145,7 +145,7 @@
                         <div class="form_section">
                             <label for="insecticide">Insecticide</label>
                             <div class="input-section">
-                                <input type="number" class="input-field" id="insecticide" name="insecticide" placeholder="0">
+                                <input type="number" class="input-field" id="insecticide" name="insecticide" placeholder="0" oninput="limitToMaxDigits(this)">
                                 <p class="unit">kg/ha</p>
                             </div>
                         </div>
@@ -156,7 +156,7 @@
                         <div class="form_section">
                             <label for="nitrogen">Nitrogen</label>
                             <div class="input-section">
-                                <input type="number" class="input-field" id="nitrogen" name="nitrogen" placeholder="0">
+                                <input type="number" class="input-field" id="nitrogen" name="nitrogen" placeholder="0" oninput="limitToMaxDigits(this)">
                                 <p class="unit">kg/ha</p>
                             </div>
                         </div>
@@ -164,7 +164,7 @@
                         <div class="form_section">
                             <label for="phosphorus">Phosphorus (production)</label>
                             <div class="input-section">
-                                <input type="number" class="input-field" id="phosphorus" name="phosphorus" placeholder="0">
+                                <input type="number" class="input-field" id="phosphorus" name="phosphorus" placeholder="0" oninput="limitToMaxDigits(this)">
                                 <p class="unit">kg/ha</p>
                             </div>
                         </div>
@@ -172,7 +172,7 @@
                         <div class="form_section">
                             <label for="potassium">Potassium (production)</label>
                             <div class="input-section">
-                                <input type="number" class="input-field" id="potassium" name="potassium" placeholder="0">
+                                <input type="number" class="input-field" id="potassium" name="potassium" placeholder="0" oninput="limitToMaxDigits(this)">
                                 <p class="unit">kg/ha</p>
                             </div>
                         </div>
@@ -180,7 +180,7 @@
                         <div class="form_section">
                             <label for="d_emission_i">Direct emission from N<br>(intermittent drainage)</label>
                             <div class="input-section">
-                                <input type="number" class="input-field" id="d_emission_i" name="d_emission" placeholder="0">
+                                <input type="number" class="input-field" id="d_emission_i" name="d_emission" placeholder="0" oninput="limitToMaxDigits(this)">
                                 <p class="unit">kg/ha</p>
                             </div>
                         </div>
@@ -188,7 +188,7 @@
                         <div class="form_section">
                             <label for="d_emission_c">Direct emission from N<br>(continues floor drainage)</label>
                             <div class="input-section">
-                                <input type="number" class="input-field" id="d_emission_c" name="d_emission" placeholder="0">
+                                <input type="number" class="input-field" id="d_emission_c" name="d_emission" placeholder="0" oninput="limitToMaxDigits(this)">
                                 <p class="unit">kg/ha</p>
                             </div>
                         </div>
@@ -196,7 +196,7 @@
                         <div class="form_section">
                             <label for="i_emission">Indirect emission from N</label>
                             <div class="input-section">
-                                <input type="number" class="input-field" id="i_emission" name="i_emission" placeholder="0">
+                                <input type="number" class="input-field" id="i_emission" name="i_emission" placeholder="0" oninput="limitToMaxDigits(this)">
                                 <p class="unit">kg/ha</p>
                             </div>
                         </div>
@@ -204,7 +204,7 @@
                         <div class="form_section">
                             <label for="f_manure">Farmyard manure</label>
                             <div class="input-section">
-                                <input type="number" class="input-field" id="f_manure" name="f_manure" placeholder="0">
+                                <input type="number" class="input-field" id="f_manure" name="f_manure" placeholder="0" oninput="limitToMaxDigits(this)">
                                 <p class="unit">kg/ha</p>
                             </div>
                         </div>
@@ -212,7 +212,7 @@
                         <div class="form_section">
                             <label for="compost">Compost</label>
                             <div class="input-section">
-                                <input type="number" class="input-field" id="compost" name="compost" placeholder="0">
+                                <input type="number" class="input-field" id="compost" name="compost" placeholder="0" oninput="limitToMaxDigits(this)">
                                 <p class="unit">kg/ha</p>
                             </div>
                         </div>
@@ -224,7 +224,7 @@
                         <div class="form_section">
                             <label for="plow_m_hour">Machine hours</label>
                             <div class="input-section">
-                                <input type="number" class="input-field" id="plow_m_hour" name="plow_m_hour" placeholder="0">
+                                <input type="number" class="input-field" id="plow_m_hour" name="plow_m_hour" placeholder="0" oninput="limitToMaxDigits(this)">
                                 <p class="unit">hr/ha</p>
                             </div>
                         </div>
@@ -232,7 +232,7 @@
                         <div class="form_section">
                             <label for="plow_f_consumption">Fuel Consumption</label>
                             <div class="input-section">
-                                <input type="number" class="input-field" id="plow_f_consumption" name="plow_f_consumption" placeholder="0">
+                                <input type="number" class="input-field" id="plow_f_consumption" name="plow_f_consumption" placeholder="0" oninput="limitToMaxDigits(this)">
                                 <p class="unit">L/ha</p>
                             </div>
                         </div>
@@ -241,7 +241,7 @@
                         <div class="form_section">
                             <label for="harrow_m_hour">Machine hours</label>
                             <div class="input-section">
-                                <input type="number" class="input-field" id="harrow_m_hour" name="harrow_m_hour" placeholder="0">
+                                <input type="number" class="input-field" id="harrow_m_hour" name="harrow_m_hour" placeholder="0" oninput="limitToMaxDigits(this)">
                                 <p class="unit">hr/ha</p>
                             </div>
                         </div>
@@ -249,7 +249,7 @@
                         <div class="form_section">
                             <label for="harrow_f_consumption">Fuel Consumption</label>
                             <div class="input-section">
-                                <input type="number" class="input-field" id="harrow_f_consumption" name="harrow_f_consumption" placeholder="0">
+                                <input type="number" class="input-field" id="harrow_f_consumption" name="harrow_f_consumption" placeholder="0" oninput="limitToMaxDigits(this)">
                                 <p class="unit">L/ha</p>
                             </div>
                         </div>
@@ -258,7 +258,7 @@
                         <div class="form_section">
                             <label for="level_m_hour">Machine hours</label>
                             <div class="input-section">
-                                <input type="number" class="input-field" id="level_m_hour" name="level_m_hour" placeholder="0">
+                                <input type="number" class="input-field" id="level_m_hour" name="level_m_hour" placeholder="0" oninput="limitToMaxDigits(this)">
                                 <p class="unit">hr/ha</p>
                             </div>
                         </div>
@@ -266,7 +266,7 @@
                         <div class="form_section">
                             <label for="level_f_consumption">Fuel Consumption</label>
                             <div class="input-section">
-                                <input type="number" class="input-field" id="level_f_consumption" name="level_f_consumption" placeholder="0">
+                                <input type="number" class="input-field" id="level_f_consumption" name="level_f_consumption" placeholder="0" oninput="limitToMaxDigits(this)">
                                 <p class="unit">L/ha</p>
                             </div>
                         </div>
@@ -275,7 +275,7 @@
                         <div class="form_section">
                             <label for="m_machinery"></label>
                             <div class="input-section">
-                                <input type="number" class="input-field" id="m_machinery" name="m_machinery" placeholder="0">
+                                <input type="number" class="input-field" id="m_machinery" name="m_machinery" placeholder="0" oninput="limitToMaxDigits(this)">
                                 <p class="unit">days</p>
                             </div>
                         </div>
@@ -284,7 +284,7 @@
                         <div class="form_section">
                             <label for="trans_m_hour">Machine hours</label>
                             <div class="input-section">
-                                <input type="number" class="input-field" id="trans_m_hour" name="trans_m_hour" placeholder="0">
+                                <input type="number" class="input-field" id="trans_m_hour" name="trans_m_hour" placeholder="0" oninput="limitToMaxDigits(this)">
                                 <p class="unit">hr/ha</p>
                             </div>
                         </div>
@@ -292,7 +292,7 @@
                         <div class="form_section">
                             <label for="trans_f_consumption">Fuel Consumption</label>
                             <div class="input-section">
-                                <input type="number" class="input-field" id="trans_f_consumption" name="trans_f_consumption" placeholder="0">
+                                <input type="number" class="input-field" id="trans_f_consumption" name="trans_f_consumption" placeholder="0" oninput="limitToMaxDigits(this)">
                                 <p class="unit">L/ha</p>
                             </div>
                         </div>
@@ -303,7 +303,7 @@
                         <div class="form_section">
                             <label for="harvest_m_hour">Machine hours</label>
                             <div class="input-section">
-                                <input type="number" class="input-field" id="harvest_m_hour" name="harvest_m_hour" placeholder="0">
+                                <input type="number" class="input-field" id="harvest_m_hour" name="harvest_m_hour" placeholder="0" oninput="limitToMaxDigits(this)">
                                 <p class="unit">hr/ha</p>
                             </div>
                         </div>
@@ -311,7 +311,7 @@
                         <div class="form_section">
                             <label for="harvest_f_consumption">Fuel Consumption</label>
                             <div class="input-section">
-                                <input type="number" class="input-field" id="harvest_f_consumption" name="harvest_f_consumption" placeholder="0">
+                                <input type="number" class="input-field" id="harvest_f_consumption" name="harvest_f_consumption" placeholder="0" oninput="limitToMaxDigits(this)">
                                 <p class="unit">L/ha</p>
                             </div>
                         </div>
@@ -322,7 +322,7 @@
                         <div class="form_section">
                             <label for="pump_m_hour">Machine hours</label>
                             <div class="input-section">
-                                <input type="number" class="input-field" id="pump_m_hour" name="pump_m_hour" placeholder="0">
+                                <input type="number" class="input-field" id="pump_m_hour" name="pump_m_hour" placeholder="0" oninput="limitToMaxDigits(this)">
                                 <p class="unit">hr/ha</p>
                             </div>
                         </div>
@@ -330,7 +330,7 @@
                         <div class="form_section">
                             <label for="pump_f_consumption">Fuel Consumption</label>
                             <div class="input-section">
-                                <input type="number" class="input-field" id="pump_f_consumption" name="pump_f_consumption" placeholder="0">
+                                <input type="number" class="input-field" id="pump_f_consumption" name="pump_f_consumption" placeholder="0" oninput="limitToMaxDigits(this)">
                                 <p class="unit">L/ha</p>
                             </div>
                         </div>
@@ -341,7 +341,7 @@
                         <div class="form_section">
                             <label for="cult_wo_straw">a.Irrigated rice cultivation<br>without straw</label>
                             <div class="input-section">
-                                <input type="number" class="input-field" id="cult_wo_straw" name="cult_wo_straw" placeholder="0">
+                                <input type="number" class="input-field" id="cult_wo_straw" name="cult_wo_straw" placeholder="0" oninput="limitToMaxDigits(this)">
                                 <p class="unit">days</p>
                             </div>
                         </div>
@@ -349,7 +349,7 @@
                         <div class="form_section">
                             <label for="cult_w_straw">b.Irrigated rice cultivation<br>with straw</label>
                             <div class="input-section">
-                                <input type="number" class="input-field" id="cult_w_straw" name="cult_w_straw" placeholder="0">
+                                <input type="number" class="input-field" id="cult_w_straw" name="cult_w_straw" placeholder="0" oninput="limitToMaxDigits(this)">
                                 <p class="unit">days</p>
                             </div>
                         </div>
@@ -360,7 +360,7 @@
                         <div class="form_section">
                             <label for="s_burn">Total CO<sub>2</sub> Emission</label>
                             <div class="input-section">
-                                <input type="number" class="input-field" id="s_burn" name="s_burn" placeholder="0">
+                                <input type="number" class="input-field" id="s_burn" name="s_burn" placeholder="0" oninput="limitToMaxDigits(this)">
                                 <p class="unit">kg/ha</p>
                             </div>
                         </div>
