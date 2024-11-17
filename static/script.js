@@ -64,12 +64,9 @@
             const maxValue = 1000000;
             const value = parseFloat(input.value);
 
-            if (value > maxValue && !input.value.includes('.')) {
-                input.value = input.value.slice(0, 7); // Slice to max 7 characters for integers (since max is 1000000)
+            if (value > maxValue) {
+                input.value = input.value.slice(0, 6); // Slice to max 7 characters for integers (since max is 1000000)
                 input.setCustomValidity('The value must not exceed 1000000.');
-            } else if (value > maxValue && input.value.includes('.')) {
-                // Allow values like 999999.99 but don't slice if it's a decimal
-                input.value = maxValue; // Alternatively, you can decide what to do for decimals over max
             }else{
                 input.setCustomValidity('');
             }
