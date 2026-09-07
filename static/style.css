@@ -443,10 +443,10 @@
             text-align: left;
         }
 
-        #table tr:last-child td:first-child, td:first-child sub{
+        #table tr:nth-last-child(-n + 2) td:first-child,
+        #table tr:nth-last-child(-n + 2) td:first-child sub {
             font-weight: bold;
         }
-
 
         footer {
             width: 100%;

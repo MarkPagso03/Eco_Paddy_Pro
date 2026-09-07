@@ -100,7 +100,7 @@
                             <label for="h_area" >Harvested Area in hectare</label>
                             <div class="input-section">
                                 <input type="number" class="input-field" id="h_area" name="h_area" placeholder="0" oninput="limitToMaxDigits(this)" step="any">
-                                <p class="unit">kg/ha</p>
+                                <p class="unit">ha</p>
                             </div>
                         </div>
 
@@ -124,9 +124,16 @@
                     <div class="_form_section">
                         <h4>Seed Input</h4>
                         <div class="form_section">
-                            <label for="seed_in" ></label>
+                            <label for="conventional_seed" >Conventional Seed</label>
                             <div class="input-section">
-                                <input type="number" class="input-field" id="seed_in" name="seed_in" placeholder="0" oninput="limitToMaxDigits(this)" step="any">
+                                <input type="number" class="input-field" id="conventional_seed" name="conventional_seed" placeholder="0" oninput="limitToMaxDigits(this)" step="any">
+                                <p class="unit">kg/ha</p>
+                            </div>
+                        </div>
+                        <div class="form_section">
+                            <label for="hybrid_seed" >Hybrid Seed</label>
+                            <div class="input-section">
+                                <input type="number" class="input-field" id="hybrid_seed" name="hybrid_seed" placeholder="0" oninput="limitToMaxDigits(this)" step="any">
                                 <p class="unit">kg/ha</p>
                             </div>
                         </div>
@@ -186,7 +193,7 @@
                         </div>
 
                         <div class="form_section">
-                            <label for="d_emission_c">Direct emission from N<br>(continues floor drainage)</label>
+                            <label for="d_emission_c">Direct emission from N<br>(continues flooding)</label>
                             <div class="input-section">
                                 <input type="number" class="input-field" id="d_emission_c" name="d_emission" placeholder="0" oninput="limitToMaxDigits(this)" step="any">
                                 <p class="unit">kg/ha</p>
@@ -385,12 +392,24 @@
                               <th>AGRICULTURAL INPUTS AND RESOURCES</th>
                               <th>QUANTITY</th>
                               <th>UNIT</th>
-                              <th>GHG<br>(kg CO2 eq/ha)</th>
+                              <th>GHG<br>(kg CO2-eq)</th>
                             </tr>
                           </thead>
                           <tbody>
                             <tr>
                               <td>1. Seed Input</td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td>&emsp;&emsp;Conventional Seed</td>
+                              <td>0</td>
+                              <td>kg/ha</td>
+                              <td>0</td>
+                            </tr>
+                            <tr>
+                              <td>&emsp;&emsp;Hybrid Seed</td>
                               <td>0</td>
                               <td>kg/ha</td>
                               <td>0</td>
@@ -656,7 +675,13 @@
                             <tr>
                               <td>Total CO<sub>2</sub> Emission</td>
                               <td></td>
+                              <td>kg CO2-eq</td>
+                              <td>0</td>
+                            </tr>
+                            <tr>
+                              <td>Total CO<sub>2</sub> Emission per hectare</td>
                               <td></td>
+                              <td>kg CO2-eq/ha</td>
                               <td>0</td>
                             </tr>
                           </tbody>
