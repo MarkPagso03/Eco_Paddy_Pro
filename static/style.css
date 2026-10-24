@@ -58,7 +58,7 @@
         .compute_prompt button:first-child {
             color: black;
             background-color: white;
-            border: 2px solid black;
+            border: 1.5px solid black;
         }
 
         .compute_prompt button:first-child:active {
@@ -208,7 +208,7 @@
 
         .welcome_block button{
             padding: 10px;
-            border: 2px solid green;
+            border: 1.5px solid green;
             border-radius: 30px;
             background-color: green;
             font-size: 18px;
@@ -285,7 +285,7 @@
         }
 
         ._form_section{
-            border: 3px solid rgb(150,150,150);
+            border: 1.5px solid rgb(150,150,150);
             background: white;
             border-radius: 20px;
             padding: 10px;
@@ -318,11 +318,33 @@
             width: 80px;
             height: 30px;
             padding: 3px;
-            border: 2px solid rgb(70,70,70);
+            border: 1.5px solid rgb(70,70,70);
             border-radius: 7px;
             font-size: 14px;
             transition: border-color 0.3s,;
 
+        }
+
+        .reminder{
+            font-size: 12.5px;
+            font-weight: light;
+            color: rgb(80,80,80);
+            padding: 2px;
+            padding-left: 16px;
+            max-width: 90%;
+        }
+
+        .sub_label{
+            font-size: 11.5px;
+        }
+
+        strong{
+            font-weight: bold;
+            color: rgb(50,50,50);
+        }
+
+        hr{
+            margin: 12px 0;
         }
 
         input[type=number]:focus {
@@ -373,7 +395,7 @@
             display: inline-block;
             width: 16px;
             height: 16px;
-            border: 2px solid rgb(0,100,0);
+            border: 1.5px solid rgb(0,100,0);
             border-radius: 50%;
             margin-right: 8px;
             transition: background 0.2s ease;
@@ -403,7 +425,7 @@
         }
 
         .table_container{
-            border: 3px solid rgb(150,150,150);
+            border: 1.5px solid rgb(150,150,150);
             background: white;
             border-radius: 20px;
             padding: 20px;
