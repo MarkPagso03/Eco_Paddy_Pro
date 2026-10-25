@@ -1,5 +1,5 @@
             // Prevent the browser from restoring the previous scroll position
-        if ('scrollRestoration' in history) {
+/*        if ('scrollRestoration' in history) {
             history.scrollRestoration = 'manual';
         }
 
@@ -11,7 +11,7 @@
         // Also reset the scroll position when the page is restored
 //        window.addEventListener('pageshow', function () {
 //            window.scrollTo(0, 0);
-
+*/
 
         let myChart;
         const row_name = [
