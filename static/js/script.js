@@ -1,3 +1,17 @@
+            // Prevent the browser from restoring the previous scroll position
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+
+        // Always scroll to the top when the page loads
+        window.addEventListener('load', function () {
+            window.scrollTo(0, 0);
+        });
+
+        // Also reset the scroll position when the page is restored
+//        window.addEventListener('pageshow', function () {
+//            window.scrollTo(0, 0);
+
 
         let myChart;
         const row_name = [
@@ -424,17 +438,4 @@
                 }
         });
 
-            // Prevent the browser from restoring the previous scroll position
-        if ('scrollRestoration' in history) {
-            history.scrollRestoration = 'manual';
-        }
-
-        // Always scroll to the top when the page loads
-        window.addEventListener('load', function () {
-            window.scrollTo(0, 0);
-        });
-
-        // Also reset the scroll position when the page is restored
-//        window.addEventListener('pageshow', function () {
-//            window.scrollTo(0, 0);
 
