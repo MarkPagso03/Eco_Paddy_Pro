@@ -2,6 +2,8 @@
         let myChart;
         const row_name = [
                     '1. Seed Input',
+                    '        Conventional Seed',
+                    '        Hybrid Seed',
                     '2. Pesticide',
                     '        Herbicide',
                     '        Insecticide',
@@ -48,7 +50,7 @@
                     '        Total CO2 Emission'
                 ];
         let input_value = [];
-        const units = ['kg/ha', '', 'kg/ha', 'kg/ha', '', '', 'kg/ha', 'kg/ha', 'kg/ha', 'kg/ha', 'kg/ha', 'kg/ha', 'kg/ha', 'kg/ha', '', '', '', 'hr/ha', 'L/ha','', 'hr/ha', 'L/ha','', 'hr/ha', 'L/ha', 'kg','', 'hr/ha', 'L/ha', '','', 'hr/ha', 'L/ha', '', '', 'hr/ha', 'L/ha','','', 'days', 'days', '', '', 'kg/ha', ''];
+        const units = ['','kg/ha','kg/ha', '', 'kg/ha', 'kg/ha', '', '', 'kg/ha', 'kg/ha', 'kg/ha', 'kg/ha', 'kg/ha', 'kg/ha', 'kg/ha', 'kg/ha', '', '', '', 'hr/ha', 'L/ha','', 'hr/ha', 'L/ha','', 'hr/ha', 'L/ha', 'kg','', 'hr/ha', 'L/ha', '','', 'hr/ha', 'L/ha', '', '', 'hr/ha', 'L/ha','','', 'days', 'days', '', '', 'kg/ha', ''];
         let data_ghg = [];
         const radioButtons = document.querySelectorAll('input[name="com_type"]');
 
@@ -161,7 +163,9 @@
         function compute(){
            // Gather all input values in one array, keeping the empty strings for gaps
         input_value = [
-            (document.querySelector("#seed_in").value || 0),
+            '',
+            (document.querySelector("#conventional_seed").value || 0),
+            (document.querySelector("#hybrid_seed").value || 0),
             '',
             (document.querySelector("#herbicide").value || 0),
             (document.querySelector("#insecticide").value || 0),
@@ -205,69 +209,71 @@
         const h_area = (parseFloat(document.querySelector("#h_area").value) || 0); // Default to 0 if invalid
 
         // Perform calculations using the values from input_value array
-        const seed_in = roundToDecimals((parseFloat(input_value[0]) || 0) * h_area * 1.12);
-        const herbicide = roundToDecimals((parseFloat(input_value[2]) || 0) * 6.3);
-        const insecticide = roundToDecimals((parseFloat(input_value[3]) || 0) * 5.1);
+        const conventional_seed = roundToDecimals((parseFloat(input_value[1]) || 0) * 1.12 * h_area);
+        const hybrid_seed = roundToDecimals((parseFloat(input_value[2]) || 0) * 2.24 * h_area);
+        const herbicide = roundToDecimals((parseFloat(input_value[4]) || 0) * 6.3);
+        const insecticide = roundToDecimals((parseFloat(input_value[5]) || 0) * 5.1);
         const pesticide = roundToDecimals((herbicide + insecticide) * h_area);
 
-        const nitrogen = roundToDecimals((parseFloat(input_value[6]) || 0) * 1.3);
-        const phosphorus = roundToDecimals((parseFloat(input_value[7]) || 0) * 0.2);
-        const potassium = roundToDecimals((parseFloat(input_value[8]) || 0) * 0.2);
-        const d_emission_i = roundToDecimals((parseFloat(input_value[9]) || 0) * 2.34);
-        const d_emission_c = roundToDecimals((parseFloat(input_value[10]) || 0) * 1.41);
-        const i_emission = roundToDecimals((parseFloat(input_value[11]) || 0) * 5.68);
-        const f_manure = roundToDecimals((parseFloat(input_value[12]) || 0) * 0.21);
-        const compost = roundToDecimals((parseFloat(input_value[13]) || 0) * 0.17);
+        const nitrogen = roundToDecimals((parseFloat(input_value[8]) || 0) * 1.3);
+        const phosphorus = roundToDecimals((parseFloat(input_value[9]) || 0) * 0.2);
+        const potassium = roundToDecimals((parseFloat(input_value[10]) || 0) * 0.2);
+        const d_emission_i = roundToDecimals((parseFloat(input_value[11]) || 0) * 2.34);
+        const d_emission_c = roundToDecimals((parseFloat(input_value[12]) || 0) * 1.41);
+        const i_emission = roundToDecimals((parseFloat(input_value[13]) || 0) * 5.68);
+        const f_manure = roundToDecimals((parseFloat(input_value[14]) || 0) * 0.21);
+        const compost = roundToDecimals((parseFloat(input_value[15]) || 0) * 0.17);
         const fertilizer = roundToDecimals((nitrogen + phosphorus + potassium + d_emission_i + d_emission_c +
                             i_emission + f_manure + compost) * h_area);
 
-        const plow_m_hour = roundToDecimals((parseFloat(input_value[17]) || 0) * 62.7 * 0.07);
-        const plow_f_consumption = roundToDecimals((parseFloat(input_value[18]) || 0) * 2.76);
-        const harrow_m_hour = roundToDecimals((parseFloat(input_value[20]) || 0) * 62.7 * 0.07);
-        const harrow_f_consumption = roundToDecimals((parseFloat(input_value[21]) || 0) * 2.76);
-        const level_m_hour = roundToDecimals((parseFloat(input_value[23]) || 0) * 62.7 * 0.07);
-        const level_f_consumption = roundToDecimals((parseFloat(input_value[24]) || 0) * 2.76);
-        const m_machinery = roundToDecimals((parseFloat(input_value[25]) || 0) * 12.8);
-        const trans_m_hour = roundToDecimals((parseFloat(input_value[27]) || 0) * 62.7 * 0.07);
-        const trans_f_consumption = roundToDecimals((parseFloat(input_value[28]) || 0) * 2.76);
+        const plow_m_hour = roundToDecimals((parseFloat(input_value[19]) || 0) * 62.7 * 0.07);
+        const plow_f_consumption = roundToDecimals((parseFloat(input_value[20]) || 0) * 2.76);
+        const harrow_m_hour = roundToDecimals((parseFloat(input_value[22]) || 0) * 62.7 * 0.07);
+        const harrow_f_consumption = roundToDecimals((parseFloat(input_value[23]) || 0) * 2.76);
+        const level_m_hour = roundToDecimals((parseFloat(input_value[25]) || 0) * 62.7 * 0.07);
+        const level_f_consumption = roundToDecimals((parseFloat(input_value[26]) || 0) * 2.76);
+        const m_machinery = roundToDecimals((parseFloat(input_value[27]) || 0) * 12.8);
+        const trans_m_hour = roundToDecimals((parseFloat(input_value[29]) || 0) * 62.7 * 0.07);
+        const trans_f_consumption = roundToDecimals((parseFloat(input_value[30]) || 0) * 2.76);
 
         const seedbed = roundToDecimals((plow_f_consumption + plow_m_hour + harrow_f_consumption + harrow_m_hour +
                          level_f_consumption + level_m_hour + trans_f_consumption + trans_m_hour +
                          m_machinery) * h_area);
 
-        const harvest_m_hour = roundToDecimals((parseFloat(input_value[31]) || 0) * 62.7 * 0.07);
-        const harvest_f_consumption = roundToDecimals((parseFloat(input_value[32]) || 0) * 2.76);
+        const harvest_m_hour = roundToDecimals((parseFloat(input_value[33]) || 0) * 62.7 * 0.07);
+        const harvest_f_consumption = roundToDecimals((parseFloat(input_value[34]) || 0) * 2.76);
         const harvest = roundToDecimals((harvest_f_consumption + harvest_m_hour) * h_area);
 
-        const pump_m_hour = roundToDecimals((parseFloat(input_value[35]) || 0) * 62.7 * 0.07);
-        const pump_f_consumption = roundToDecimals((parseFloat(input_value[36]) || 0) * 2.76);
+        const pump_m_hour = roundToDecimals((parseFloat(input_value[37]) || 0) * 62.7 * 0.07);
+        const pump_f_consumption = roundToDecimals((parseFloat(input_value[38]) || 0) * 2.76);
         const pump = roundToDecimals((pump_f_consumption + pump_m_hour) * h_area);
 
         // Handle irrigation
         let cult_wo_straw, cult_w_straw;
         if (document.querySelector("#irrigated").checked) {
-            cult_wo_straw = roundToDecimals((parseFloat(input_value[39]) || 0) * 1.3);
-            cult_w_straw = roundToDecimals((parseFloat(input_value[40]) || 0) * 2.08);
+            cult_wo_straw = roundToDecimals((parseFloat(input_value[41]) || 0) * 1.3);
+            cult_w_straw = roundToDecimals((parseFloat(input_value[42]) || 0) * 2.08);
         } else {
-            cult_wo_straw = roundToDecimals((parseFloat(input_value[39]) || 0) * 0.36);
-            cult_w_straw = roundToDecimals((parseFloat(input_value[40]) || 0) * 0.51);
+            cult_wo_straw = roundToDecimals((parseFloat(input_value[41]) || 0) * 0.36);
+            cult_w_straw = roundToDecimals((parseFloat(input_value[42]) || 0) * 0.51);
         }
 
         const s_emission_ch4 = roundToDecimals(cult_w_straw + cult_wo_straw);
         const s_emission_co2 = roundToDecimals(s_emission_ch4 * 34.16 * h_area);
 
         // s_burn value calculation
-        const s_burn = roundToDecimals((parseFloat(input_value[43]) || 0) * 2.74 * 34.16 * 0.8 * 0.95 * h_area);
+        const s_burn = roundToDecimals((parseFloat(input_value[45]) || 0) * 2.74 * 34.16 * 0.8 * 0.95 * h_area);
 
         // Total emissions and values
-        const total = roundToDecimals(seed_in + pesticide + fertilizer + seedbed + harvest + pump + s_emission_co2 + s_burn);
+        const total = roundToDecimals(conventional_seed + hybrid_seed + pesticide + fertilizer + seedbed + harvest + pump + s_emission_co2 + s_burn);
+        const total_per_hectare = roundToDecimals(total / h_area);
 
-            data_ghg = [seed_in,'', herbicide, insecticide, pesticide,'', nitrogen, phosphorus,
+            data_ghg = ['', conventional_seed, hybrid_seed,'', herbicide, insecticide, pesticide,'', nitrogen, phosphorus,
                 potassium, d_emission_i, d_emission_c, i_emission, f_manure, compost, fertilizer, '', '',
                 plow_m_hour, plow_f_consumption, '', harrow_m_hour, harrow_f_consumption, '', level_m_hour,
                 level_f_consumption, m_machinery, '', trans_m_hour, trans_f_consumption, seedbed, '',
                 harvest_m_hour, harvest_f_consumption, harvest, '' , pump_m_hour, pump_f_consumption, pump, '',
-                cult_wo_straw, cult_w_straw, s_emission_ch4, s_emission_co2, s_burn, total];
+                cult_wo_straw, cult_w_straw, s_emission_ch4, s_emission_co2, s_burn, total, total_per_hectare];
 
             const tableBody = document.querySelector("#table tbody");
 
@@ -295,10 +301,10 @@
             myChart = new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: ['Seed', 'Pesticide', 'Fertilizer', 'Seedbed and Land Preparation', 'Harvesting and Threshing', 'Pump (Irrigation)', 'Soil Emission', 'Straw Burning'],
+                    labels: ['Conventional', 'Hybrid', 'Pesticide', 'Fertilizer', 'Seedbed and Land Preparation', 'Harvesting and Threshing', 'Pump (Irrigation)', 'Soil Emission', 'Straw Burning'],
                     datasets: [{
                         label: 'GHG Data',
-                        data: [seed_in, pesticide, fertilizer, seedbed, harvest, pump, s_emission_co2, s_burn],
+                        data: [conventional_seed, hybrid_seed, pesticide, fertilizer, seedbed, harvest, pump, s_emission_co2, s_burn],
                         backgroundColor: 'rgb(74, 191, 103, 0.2)',
                         borderColor: 'rgb(74, 191, 103, 1)',
                         borderWidth: 1
