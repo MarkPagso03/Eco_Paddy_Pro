@@ -435,6 +435,6 @@
         });
 
         // Also reset the scroll position when the page is restored
-        window.addEventListener('pageshow', function () {
-            window.scrollTo(0, 0);
+//        window.addEventListener('pageshow', function () {
+//            window.scrollTo(0, 0);
 
