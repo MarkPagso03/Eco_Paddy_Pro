@@ -284,6 +284,14 @@
             padding: 30px;
         }
 
+        .--form_container{
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+
+            align-items: start;
+        }
+
         ._form_section{
             border: 1.5px solid rgb(150,150,150);
             background: white;
